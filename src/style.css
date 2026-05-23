@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply text-white antialiased;
+  background-color: #111111;
+  min-height: 100vh;
+}
+
+* {
+  @apply selection:bg-indigoInk-500/40 selection:text-white;
+}
+
+@layer utilities {
+  .neon-below-lavender {
+    box-shadow: 0 8px 22px rgba(157, 78, 221, 0.28);
+  }
+
+  .neon-below-mauve {
+    box-shadow: 0 8px 22px rgba(211, 153, 255, 0.28);
+  }
+
+  .neon-text-below-gradient {
+    filter: drop-shadow(0 5px 12px rgba(167, 51, 255, 0.07))
+      drop-shadow(0 6px 16px rgba(157, 78, 221, 0.07));
+  }
+}
