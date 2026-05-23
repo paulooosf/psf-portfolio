@@ -1,5 +1,6 @@
 export interface ExperienceItem {
   company: string
+  companyDescription?: string
   role: string
   period: string
   bullets: string[]
@@ -9,6 +10,15 @@ export interface ExperienceItem {
 export interface Experience {
   company: string
   roles: ExperienceItem[]
+}
+
+export interface ComplementaryExperienceItem {
+  company: string
+  companyDescription: string
+  role: string
+  period: string
+  chips: string[]
+  bullets: string[]
 }
 
 export const experienceData: Experience[] = [
@@ -48,6 +58,31 @@ export const experienceData: Experience[] = [
           'Participação ativa em ambiente ágil Scrum e alinhamento com stakeholders.',
         ],
       },
+    ],
+  },
+]
+
+export const complementaryExperienceData: ComplementaryExperienceItem[] = [
+  {
+    company: 'SERRATEC',
+    companyDescription:
+      'Programa de residência tecnológica com foco em formação acelerada e inserção de profissionais no mercado de tecnologia.',
+    role: 'Monitor técnico em Lógica de Programação & APIs RESTful',
+    period: '2025 → Atual',
+    chips: [
+      'Lógica de programação',
+      'Portugol',
+      'Spring Boot',
+      'APIs Rest',
+      'Mentoria',
+      'Educação',
+      'Didática',
+    ],
+    bullets: [
+      'Apoio técnico e acompanhamento de alunos durante a formação prática em desenvolvimento de software;',
+      'Revisão e reforço de conteúdos de lógica de programação e APIs RESTful com Spring Boot;',
+      'Atuação conjunta com professores na resolução de dúvidas e suporte às atividades técnicas;',
+      'Contribuição na formação de novos profissionais em um programa intensivo de tecnologia com foco em empregabilidade.',
     ],
   },
 ]
