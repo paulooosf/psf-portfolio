@@ -8,7 +8,7 @@ const profilePhoto = '/images/foto-perfil.jpeg'
 </script>
 
 <template>
-  <section id="hero" class="relative min-h-screen w-full overflow-x-hidden">
+  <section id="hero" class="relative min-h-screen w-full overflow-x-hidden bg-[#090909]">
     <div class="absolute inset-0 z-0">
       <ParticlesBackground />
     </div>
