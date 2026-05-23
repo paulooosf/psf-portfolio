@@ -12,7 +12,7 @@ html {
 
 body {
   @apply text-white antialiased;
-  background-color: #111111;
+  background-color: #090909;
   min-height: 100vh;
 }
 

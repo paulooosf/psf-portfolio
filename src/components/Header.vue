@@ -12,20 +12,10 @@ const navItems = [
 </script>
 
 <template>
-  <header
-    class="fixed top-0 z-50 w-full bg-[#111111]/65 backdrop-blur-md backdrop-saturate-150"
-  >
+  <header class="fixed top-0 z-50 w-full backdrop-blur-md backdrop-saturate-150">
     <nav class="mx-auto flex h-16 max-w-7xl items-center px-6 sm:px-8 lg:px-12">
-      <a
-        href="#hero"
-        class="flex w-24 shrink-0 items-center sm:w-28"
-        aria-label="Ir para o início"
-      >
-        <img
-          :src="logoSrc"
-          alt="Paulo Henrique"
-          class="h-9 w-auto object-contain sm:h-10"
-        />
+      <a href="#hero" class="flex w-24 shrink-0 items-center sm:w-28" aria-label="Ir para o início">
+        <img :src="logoSrc" alt="Paulo Henrique" class="h-9 w-auto object-contain sm:h-10" />
       </a>
 
       <ul class="flex min-w-0 flex-1 justify-center gap-1 overflow-x-auto sm:gap-4 lg:gap-6">
