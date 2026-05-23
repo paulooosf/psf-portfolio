@@ -2,6 +2,7 @@
 import Header from './components/Header.vue'
 import HeroSection from './components/sections/HeroSection.vue'
 import ExperienceSection from './components/sections/ExperienceSection.vue'
+import SkillsSection from './components/sections/SkillsSection.vue'
 </script>
 
 <template>
@@ -9,5 +10,6 @@ import ExperienceSection from './components/sections/ExperienceSection.vue'
   <main class="min-h-screen pt-16 text-white">
     <HeroSection />
     <ExperienceSection />
+    <SkillsSection />
   </main>
 </template>

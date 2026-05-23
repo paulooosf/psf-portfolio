@@ -10,14 +10,15 @@ interface SpotlightCardProps {
   className?: string
   spotlightColor?: string
   borderColor?: string
+  padding?: string
 }
 
 const {
   className = '',
   spotlightColor = 'rgba(241, 241, 241, 0.6)',
   borderColor = 'border-white/10',
+  padding = 'p-8',
 } = defineProps<SpotlightCardProps>()
-
 const divRef = useTemplateRef<HTMLDivElement>('divRef')
 const isFocused = ref<boolean>(false)
 const position = ref<Position>({ x: 0, y: 0 })
@@ -57,7 +58,7 @@ const handleMouseLeave = () => {
     @blur="handleBlur"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
-    :class="['relative rounded-3xl border overflow-hidden p-8', borderColor, className]"
+    :class="['relative rounded-3xl border overflow-hidden', padding, borderColor, className]"
   >
     <div
       class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out"
