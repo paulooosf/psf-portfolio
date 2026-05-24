@@ -17,7 +17,7 @@ import { skillCategories, studyingItems } from '@/data/skills'
           </span>
         </h2>
         <p class="font-sans text-base font-normal leading-relaxed text-slate-300 sm:text-lg">
-          Tecnologias que estou apto a usar no dia-a-dia
+          Tecnologias utilizadas em projetos reais.
         </p>
       </div>
 

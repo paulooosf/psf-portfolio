@@ -25,7 +25,7 @@ const splitBulletsIntoColumns = (bullets: string[], cols = 2): string[][] => {
           </span>
         </h2>
         <p class="font-sans text-base font-normal leading-relaxed text-slate-300 sm:text-lg">
-          Construindo soluções profissionais há dois anos
+          Desenvolvendo soluções escaláveis e APIs modernas.
         </p>
       </div>
 
