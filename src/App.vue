@@ -3,6 +3,7 @@ import Header from './components/Header.vue'
 import HeroSection from './components/sections/HeroSection.vue'
 import ExperienceSection from './components/sections/ExperienceSection.vue'
 import SkillsSection from './components/sections/SkillsSection.vue'
+import ProjectsSection from './components/sections/ProjectsSection.vue'
 </script>
 
 <template>
@@ -11,5 +12,6 @@ import SkillsSection from './components/sections/SkillsSection.vue'
     <HeroSection />
     <ExperienceSection />
     <SkillsSection />
+    <ProjectsSection />
   </main>
 </template>
