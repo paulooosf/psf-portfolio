@@ -14,7 +14,7 @@ defineProps<{
 
 <template>
   <div
-    class="project-card flex flex-col overflow-hidden rounded-3xl border border-lavenderPurple-500/40 bg-transparent transition-all duration-300 ease-out"
+    class="project-card h-full flex flex-col overflow-hidden rounded-3xl border border-lavenderPurple-500/40 bg-transparent transition-all duration-300 ease-out"
   >
     <div class="relative shrink-0">
       <img :src="image" :alt="title" class="h-56 w-full object-cover object-top" />

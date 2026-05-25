@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import { academicEducation, complementaryEducation } from '@/data/education'
 import ScrollReveal from '@/components/ui/ScrollReveal.vue'
 
@@ -7,42 +6,6 @@ const allItems = [
   { label: 'Formação Acadêmica', ...academicEducation[0] },
   { label: 'Formação Complementar', ...complementaryEducation[0] },
 ]
-
-const gridRef = ref<HTMLElement | null>(null)
-
-function equalizeEducationHeights() {
-  nextTick(() => {
-    if (!gridRef.value) return
-    const cards = Array.from(gridRef.value.querySelectorAll<HTMLElement>('.education-card'))
-    if (!cards.length) return
-
-    cards.forEach((c) => (c.style.minHeight = ''))
-    const heights = cards.map((c) => c.getBoundingClientRect().height)
-    const max = Math.max(...heights)
-    cards.forEach((c) => (c.style.minHeight = `${max}px`))
-  })
-}
-
-let resizeObserver: ResizeObserver | null = null
-
-onMounted(() => {
-  equalizeEducationHeights()
-  globalThis.addEventListener('load', equalizeEducationHeights)
-  globalThis.addEventListener('resize', equalizeEducationHeights)
-
-  if (gridRef.value && 'ResizeObserver' in globalThis) {
-    resizeObserver = new ResizeObserver(() => equalizeEducationHeights())
-    Array.from(gridRef.value.querySelectorAll('.education-card')).forEach((el) =>
-      resizeObserver?.observe(el),
-    )
-  }
-})
-
-onBeforeUnmount(() => {
-  globalThis.removeEventListener('load', equalizeEducationHeights)
-  globalThis.removeEventListener('resize', equalizeEducationHeights)
-  if (resizeObserver) resizeObserver.disconnect()
-})
 </script>
 
 <template>
@@ -65,14 +28,14 @@ onBeforeUnmount(() => {
         </div>
       </ScrollReveal>
 
-      <div ref="gridRef" class="grid w-full max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2">
+      <div class="grid w-full max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 items-stretch">
         <ScrollReveal
           v-for="(item, idx) in allItems"
           :key="item.course"
           :delay="idx * 120"
           direction="up"
         >
-          <div class="flex flex-col gap-2">
+          <div class="h-full flex flex-col gap-2">
             <h3 class="font-sora text-base font-semibold text-white">
               {{ item.label }}
             </h3>
@@ -86,7 +49,7 @@ onBeforeUnmount(() => {
               />
 
               <div
-                class="relative education-card flex h-full flex-col justify-center gap-1.5 rounded-3xl border border-lavenderPurple-500/40 bg-[#090909] px-7 py-6 transition-all duration-500 group-hover:-translate-x-[6px] group-hover:border-lavenderPurple-500/80 group-hover:shadow-[0_0_24px_4px_rgba(157,78,221,0.3)]"
+                class="relative flex h-full flex-col justify-center gap-1.5 rounded-3xl border border-lavenderPurple-500/40 bg-[#090909] px-7 py-6 transition-all duration-500 group-hover:-translate-x-[6px] group-hover:border-lavenderPurple-500/80 group-hover:shadow-[0_0_24px_4px_rgba(157,78,221,0.3)]"
               >
                 <p class="font-sans text-sm font-medium text-white/70">
                   {{ item.institution }}

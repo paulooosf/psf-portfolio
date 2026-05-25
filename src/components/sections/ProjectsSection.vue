@@ -1,47 +1,7 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import ProjectCard from '@/components/ui/ProjectCard.vue'
 import ScrollReveal from '@/components/ui/ScrollReveal.vue'
 import { projectsData } from '@/data/projects'
-
-const gridRef = ref<HTMLElement | null>(null)
-
-function equalizeProjectHeights() {
-  nextTick(() => {
-    if (!gridRef.value) return
-    const cards = Array.from(gridRef.value.querySelectorAll<HTMLElement>('.project-card'))
-    if (!cards.length) return
-
-    // reset
-    cards.forEach((c) => (c.style.minHeight = ''))
-
-    const heights = cards.map((c) => c.getBoundingClientRect().height)
-    const max = Math.max(...heights)
-    cards.forEach((c) => (c.style.minHeight = `${max}px`))
-  })
-}
-
-let resizeObserver: ResizeObserver | null = null
-
-onMounted(() => {
-  equalizeProjectHeights()
-  globalThis.addEventListener('load', equalizeProjectHeights)
-  globalThis.addEventListener('resize', equalizeProjectHeights)
-
-  // Observe grid children in case images load later
-  if (gridRef.value && 'ResizeObserver' in globalThis) {
-    resizeObserver = new ResizeObserver(() => equalizeProjectHeights())
-    Array.from(gridRef.value.querySelectorAll('.project-card')).forEach((el) =>
-      resizeObserver?.observe(el),
-    )
-  }
-})
-
-onBeforeUnmount(() => {
-  globalThis.removeEventListener('load', equalizeProjectHeights)
-  globalThis.removeEventListener('resize', equalizeProjectHeights)
-  if (resizeObserver) resizeObserver.disconnect()
-})
 </script>
 
 <template>
@@ -64,22 +24,24 @@ onBeforeUnmount(() => {
         </div>
       </ScrollReveal>
 
-      <div ref="gridRef" class="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
+      <div class="grid w-full max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8 items-stretch">
         <ScrollReveal
           v-for="(project, i) in projectsData"
           :key="project.title"
           :delay="i * 120"
           direction="up"
         >
-          <ProjectCard
-            :title="project.title"
-            :category="project.category"
-            :description="project.description"
-            :chips="project.chips"
-            :image="project.image"
-            :github-links="project.githubLinks"
-            :live-url="project.liveUrl"
-          />
+          <div class="h-full flex flex-col">
+            <ProjectCard
+              :title="project.title"
+              :category="project.category"
+              :description="project.description"
+              :chips="project.chips"
+              :image="project.image"
+              :github-links="project.githubLinks"
+              :live-url="project.liveUrl"
+            />
+          </div>
         </ScrollReveal>
       </div>
     </div>
