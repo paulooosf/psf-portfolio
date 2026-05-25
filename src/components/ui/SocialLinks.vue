@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-4">
+  <div class="flex justify-center gap-4 lg:justify-start">
     <a
       v-for="link in links"
       :key="link.name"

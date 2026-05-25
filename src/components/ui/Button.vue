@@ -1,7 +1,7 @@
 <template>
   <button
     :class="[
-      'group neon-below-lavender relative inline-flex h-12 items-center justify-center rounded-full bg-lavenderPurple-500 px-6 font-semibold text-white transition-all duration-300 ease-out hover:neon-below-mauve',
+      'group neon-below-lavender relative inline-flex h-12 w-full items-center justify-center rounded-full bg-lavenderPurple-500 px-6 font-semibold text-white transition-all duration-300 ease-out hover:neon-below-mauve',
       {
         'cursor-not-allowed opacity-50': disabled,
       },

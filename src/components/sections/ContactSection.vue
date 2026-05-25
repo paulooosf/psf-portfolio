@@ -151,7 +151,7 @@ function handleSubmit(event: Event) {
               aria-hidden="true"
             ></div>
             <form
-              class="relative rounded-3xl border border-lavenderPurple-500/40 bg-[#111111] px-5 py-5 shadow-[0_0_28px_16px_rgba(157,78,221,0.12)]"
+              class="relative rounded-3xl border border-lavenderPurple-500/40 bg-[#111111] px-5 py-5 shadow-[0_0_12px_6px_rgba(157,78,221,0.06)] sm:shadow-[0_0_28px_16px_rgba(157,78,221,0.12)]"
               @submit="handleSubmit"
             >
               <div class="grid gap-3">

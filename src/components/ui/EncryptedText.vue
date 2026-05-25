@@ -15,6 +15,7 @@ const props = withDefaults(
   },
 )
 
+const isMobile = ref(false)
 const containerRef = ref<HTMLElement | null>(null)
 const charset =
   'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-={}[];:,.<>/?'
@@ -68,7 +69,8 @@ const startEncryption = () => {
 }
 
 onMounted(() => {
-  startEncryption()
+  isMobile.value = window.innerWidth < 1024
+  if (!isMobile.value) startEncryption()
 })
 
 onUnmounted(() => {
@@ -79,12 +81,15 @@ onUnmounted(() => {
 
 <template>
   <span ref="containerRef" class="inline-block font-inherit tracking-wide">
-    <span
-      v-for="(char, i) in displayedText"
-      :key="i"
-      :class="revealedIndices.has(i) ? 'text-lavenderPurple-500' : 'text-slate-600'"
-    >
-      {{ char }}
-    </span>
+    <template v-if="isMobile">{{ props.text }}</template>
+    <template v-else>
+      <span
+        v-for="(char, i) in displayedText"
+        :key="i"
+        :class="revealedIndices.has(i) ? 'text-lavenderPurple-500' : 'text-slate-600'"
+      >
+        {{ char }}
+      </span>
+    </template>
   </span>
 </template>

@@ -9,13 +9,15 @@ import ContactSection from './components/sections/ContactSection.vue'
 </script>
 
 <template>
-  <Header />
-  <main class="min-h-screen pt-16 text-white">
-    <HeroSection />
-    <ExperienceSection />
-    <SkillsSection />
-    <ProjectsSection />
-    <EducationSection />
-    <ContactSection />
-  </main>
+  <div class="overflow-x-hidden">
+    <Header />
+    <main class="min-h-screen pt-16 text-white">
+      <HeroSection />
+      <ExperienceSection />
+      <SkillsSection />
+      <ProjectsSection />
+      <EducationSection />
+      <ContactSection />
+    </main>
+  </div>
 </template>
