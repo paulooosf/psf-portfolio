@@ -29,7 +29,7 @@ function handleSubmit(event: Event) {
 
 <template>
   <section id="contact" class="bg-[#111111] py-20 sm:py-28 md:py-32">
-    <div class="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-12">
+    <div class="mx-auto w-full max-w-[1200px] px-5 sm:px-7 lg:px-14">
       <div class="flex w-full flex-col items-center gap-4 text-center mb-16">
         <h2 class="font-sora text-4xl font-bold sm:text-5xl lg:text-6xl">
           <span
@@ -43,8 +43,8 @@ function handleSubmit(event: Event) {
         </p>
       </div>
 
-      <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-        <div class="flex flex-col gap-6 sm:px-2">
+      <div class="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-x-12">
+        <div class="flex flex-col gap-6 sm:px-4">
           <div class="space-y-4">
             <h3 class="font-sora text-3xl font-bold text-white sm:text-4xl">Vamos conversar?</h3>
             <p class="max-w-xl font-sans text-base leading-relaxed text-slate-300 sm:text-lg">
@@ -149,7 +149,7 @@ function handleSubmit(event: Event) {
             aria-hidden="true"
           ></div>
           <form
-            class="relative rounded-3xl border border-lavenderPurple-500/40 bg-[#111111] px-6 py-6 shadow-[0_0_28px_16px_rgba(157,78,221,0.12)]"
+            class="relative rounded-3xl border border-lavenderPurple-500/40 bg-[#111111] px-5 py-5 shadow-[0_0_28px_16px_rgba(157,78,221,0.12)]"
             @submit="handleSubmit"
           >
             <div class="grid gap-3">
@@ -175,7 +175,7 @@ function handleSubmit(event: Event) {
                   v-model="email"
                   type="email"
                   required
-                  class="mt-3 h-12 w-full rounded-lg border border-white/10 bg-[#0f0f0f] px-4 text-white outline-none transition focus:border-lavenderPurple-500 focus:ring-2 focus:ring-lavenderPurple-500/20"
+                  class="mt-3 h-11 w-full rounded-lg border border-white/10 bg-[#0f0f0f] px-4 text-white outline-none transition focus:border-lavenderPurple-500 focus:ring-2 focus:ring-lavenderPurple-500/20"
                 />
                 <p v-if="emailError" class="mt-2 text-sm text-rose-400">{{ emailError }}</p>
               </div>
