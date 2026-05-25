@@ -9,7 +9,7 @@ import { skillCategories, studyingItems } from '@/data/skills'
       class="mx-auto flex w-full max-w-[1440px] flex-col items-center gap-16 px-4 sm:px-6 lg:px-12"
     >
       <div class="flex w-full flex-col items-center gap-4 text-center">
-        <h2 class="font-sora text-5xl font-bold sm:text-6xl lg:text-7xl">
+        <h2 class="font-sora text-4xl font-bold sm:text-5xl lg:text-6xl">
           <span
             class="bg-gradient-to-r from-mauveMagic-400 to-lavenderPurple-500 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(199,125,255,0.28)]"
           >
