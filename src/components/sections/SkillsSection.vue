@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import SkillCard from '@/components/ui/SkillCard.vue'
+import ScrollReveal from '@/components/ui/ScrollReveal.vue'
 import { skillCategories, studyingItems } from '@/data/skills'
 </script>
 
@@ -8,18 +9,20 @@ import { skillCategories, studyingItems } from '@/data/skills'
     <div
       class="mx-auto flex w-full max-w-[1440px] flex-col items-center gap-16 px-4 sm:px-6 lg:px-12"
     >
-      <div class="flex w-full flex-col items-center gap-4 text-center">
-        <h2 class="font-sora text-4xl font-bold sm:text-5xl lg:text-6xl">
-          <span
-            class="bg-gradient-to-r from-mauveMagic-400 to-lavenderPurple-500 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(199,125,255,0.28)]"
-          >
-            Habilidades Técnicas
-          </span>
-        </h2>
-        <p class="font-sans text-base font-normal leading-relaxed text-slate-300 sm:text-lg">
-          Tecnologias utilizadas em projetos reais.
-        </p>
-      </div>
+      <ScrollReveal direction="right">
+        <div class="flex w-full flex-col items-center gap-4 text-center">
+          <h2 class="font-sora text-4xl font-bold sm:text-5xl lg:text-6xl">
+            <span
+              class="bg-gradient-to-r from-mauveMagic-400 to-lavenderPurple-500 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(199,125,255,0.28)]"
+            >
+              Habilidades Técnicas
+            </span>
+          </h2>
+          <p class="font-sans text-base font-normal leading-relaxed text-slate-300 sm:text-lg">
+            Tecnologias utilizadas em projetos reais.
+          </p>
+        </div>
+      </ScrollReveal>
 
       <div class="flex w-full flex-col items-center gap-10">
         <div
@@ -34,16 +37,18 @@ import { skillCategories, studyingItems } from '@/data/skills'
           </h3>
 
           <div class="flex flex-wrap justify-center gap-4">
-            <SkillCard
-              v-for="skill in category.skills"
+            <ScrollReveal
+              v-for="(skill, i) in category.skills"
               :key="skill"
-              :glow-color="category.spotlightColor"
-              :border-color="category.borderColor"
+              :delay="i * 80"
+              direction="up"
             >
-              <span :class="['font-sans text-sm font-semibold', category.color]">
-                {{ skill }}
-              </span>
-            </SkillCard>
+              <SkillCard :glow-color="category.spotlightColor" :border-color="category.borderColor">
+                <span :class="['font-sans text-sm font-semibold', category.color]">
+                  {{ skill }}
+                </span>
+              </SkillCard>
+            </ScrollReveal>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import SpotlightCard from '@/components/ui/SpotlightCard.vue'
+import ScrollReveal from '@/components/ui/ScrollReveal.vue'
 import { experienceData, complementaryExperienceData } from '@/data/experience'
 
 const splitBulletsIntoColumns = (bullets: string[], cols = 2): string[][] => {
@@ -16,21 +17,28 @@ const splitBulletsIntoColumns = (bullets: string[], cols = 2): string[][] => {
     <div
       class="mx-auto flex w-full max-w-[1440px] flex-col items-center gap-16 px-4 sm:px-6 lg:px-12"
     >
-      <div class="flex w-full flex-col items-center gap-4 text-center">
-        <h2 class="font-sora text-4xl font-bold sm:text-5xl lg:text-6xl">
-          <span
-            class="bg-gradient-to-r from-mauveMagic-400 to-lavenderPurple-500 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(199,125,255,0.28)]"
-          >
-            Experiência Profissional
-          </span>
-        </h2>
-        <p class="font-sans text-base font-normal leading-relaxed text-slate-300 sm:text-lg">
-          Desenvolvendo soluções escaláveis e APIs modernas.
-        </p>
-      </div>
+      <ScrollReveal direction="left">
+        <div class="flex w-full flex-col items-center gap-4 text-center">
+          <h2 class="font-sora text-4xl font-bold sm:text-5xl lg:text-6xl">
+            <span
+              class="bg-gradient-to-r from-mauveMagic-400 to-lavenderPurple-500 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(199,125,255,0.28)]"
+            >
+              Experiência Profissional
+            </span>
+          </h2>
+          <p class="font-sans text-base font-normal leading-relaxed text-slate-300 sm:text-lg">
+            Desenvolvendo soluções escaláveis e APIs modernas.
+          </p>
+        </div>
+      </ScrollReveal>
 
       <div class="w-full">
-        <template v-for="experience in experienceData" :key="experience.company">
+        <ScrollReveal
+          v-for="(experience, idx) in experienceData"
+          :key="experience.company"
+          :delay="idx * 120"
+          direction="up"
+        >
           <SpotlightCard border-color="border-lavenderPurple-500/40">
             <div class="relative z-10">
               <template
@@ -110,7 +118,7 @@ const splitBulletsIntoColumns = (bullets: string[], cols = 2): string[][] => {
               </template>
             </div>
           </SpotlightCard>
-        </template>
+        </ScrollReveal>
       </div>
 
       <!-- Complementary Experience -->
