@@ -1,48 +1,78 @@
-# psf-portfolio
+<div align="center">
+    <h1>Portfólio</h1>   
+    <img alt="Logo do projeto" src="public/images/icon.png" width="120">
+    <h3>Portfólio pessoal moderno e responsivo, apresentando experiências, projetos e habilidades como desenvolvedor back-end.</h3>
+    <img alt="Vue" src="https://img.shields.io/badge/vue.js-%234FC08D?style=for-the-badge&logo=vue.js&logoColor=%234FC08D&labelColor=black">
+    <img alt="TypeScript" src="https://img.shields.io/badge/TYPESCRIPT-%233178C6?style=for-the-badge&logo=typescript&logoColor=%233178C6&labelColor=black">
+    <img alt="TailwindCSS" src="https://img.shields.io/badge/tailwindcss-%2306B6D4?style=for-the-badge&logo=tailwindcss&logoColor=%2306B6D4&labelColor=black">
+</div>
+<div align="center">
+  <a href="#funcionalidades">Funcionalidades</a> •
+  <a href="#como-usar">Como usar</a> •
+  <a href="#créditos">Créditos</a>
+</div>
 
-This template should help get you started developing with Vue 3 in Vite.
+## Capturas de tela
 
-## Recommended IDE Setup
+<details>
+<summary>Mostrar</summary>
+<h3>Início</h3>
+<img alt="Captura de tela da seção hero" src="https://i.imgur.com/dMO1AuC.png">
+<h3>Projetos</h3>
+<img alt="Captura de tela da seção de projetos" src="https://i.imgur.com/Nr6uIZp.png">
+<h3>Contato</h3>
+<img alt="Captura de tela da seção de contato" src="https://i.imgur.com/hzzpM26.png">
+</details>
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Funcionalidades
 
-## Recommended Browser Setup
+- Design moderno com tema dark e gradientes roxos personalizados;
+- Totalmente responsivo, adaptado para desktop, tablet e mobile;
+- Menu hamburguer animado para dispositivos móveis;
+- Efeito de texto criptografado no nome (apenas desktop);
+- Animações suaves de scroll reveal;
+- Partículas interativas no background da seção hero;
+- Cards com efeito spotlight seguindo o cursor;
+- Seções organizadas: Hero, Experiência, Habilidades, Projetos, Formação e Contato;
+- Formulário de contato integrado com mailto;
+- Smooth scroll entre seções;
+- Footer minimalista com divisória roxa.
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Como usar
 
-## Type Support for `.vue` Imports in TS
+Certifique-se de ter o [Node.js](https://nodejs.org/) instalado (versão 18 ou superior recomendada).
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+1. Clone o repositório:
 
-## Customize configuration
+```bash
+git clone https://github.com/paulooosf/psf-portfolio.git
+cd psf-portfolio
+```
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+2. Instale as dependências:
 
-## Project Setup
-
-```sh
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+3. Execute o projeto em modo de desenvolvimento:
 
-```sh
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+Após a inicialização, o portfólio estará disponível em http://localhost:5173
 
-```sh
+### Build para produção
+
+Para gerar a versão otimizada para produção:
+
+```bash
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+Os arquivos otimizados estarão na pasta `dist/`.
 
-```sh
-npm run lint
-```
+## Créditos
+
+- Paulo Henrique - [paulooosf](http://github.com/paulooosf)
