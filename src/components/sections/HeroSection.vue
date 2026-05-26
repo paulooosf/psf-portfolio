@@ -36,7 +36,7 @@ const profilePhoto = '/images/foto-perfil.jpeg'
               </div>
             </div>
 
-            <div class="w-full space-y-8 text-center lg:text-left lg:max-w-xl lg:max-w-2xl">
+            <div class="w-full space-y-8 text-center lg:text-left lg:max-w-2xl">
               <p
                 class="font-sans text-xl font-semibold leading-tight text-white/90 sm:text-2xl md:text-2xl lg:text-3xl"
               >

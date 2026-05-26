@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import Button from '@/components/ui/Button.vue'
 import ScrollReveal from '@/components/ui/ScrollReveal.vue'
 
 const name = ref('')

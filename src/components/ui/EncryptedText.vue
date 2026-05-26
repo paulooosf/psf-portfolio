@@ -21,8 +21,8 @@ const charset =
   'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-={}[];:,.<>/?'
 const displayedText = ref(props.text)
 const revealedIndices = ref(new Set<number>())
-let flipInterval: NodeJS.Timeout | null = null
-let revealInterval: NodeJS.Timeout | null = null
+let flipInterval: ReturnType<typeof setInterval> | null = null
+let revealInterval: ReturnType<typeof setInterval> | null = null
 
 const getRandomChar = () => charset[Math.floor(Math.random() * charset.length)]
 

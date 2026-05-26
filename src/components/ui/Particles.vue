@@ -37,7 +37,7 @@ const props = withDefaults(defineProps<ParticlesProps>(), {
   sizeRandomness: 1,
   cameraDistance: 20,
   disableRotation: false,
-  className: ''
+  className: '',
 })
 
 const containerRef = useTemplateRef<HTMLDivElement>('containerRef')
@@ -191,8 +191,10 @@ const initParticles = () => {
   const resize = () => {
     if (!container) return
 
-    const parentWidth = container.parentElement?.offsetWidth || container.offsetWidth || window.innerWidth
-    const parentHeight = container.parentElement?.offsetHeight || container.offsetHeight || window.innerHeight
+    const parentWidth =
+      container.parentElement?.offsetWidth || container.offsetWidth || window.innerWidth
+    const parentHeight =
+      container.parentElement?.offsetHeight || container.offsetHeight || window.innerHeight
 
     const width = Math.max(parentWidth, 300)
     const height = Math.max(parentHeight, 300)
@@ -214,7 +216,8 @@ const initParticles = () => {
   const positions = new Float32Array(count * 3)
   const randoms = new Float32Array(count * 4)
   const colors = new Float32Array(count * 3)
-  const palette = props.particleColors && props.particleColors.length > 0 ? props.particleColors : defaultColors
+  const palette =
+    props.particleColors && props.particleColors.length > 0 ? props.particleColors : defaultColors
 
   for (let i = 0; i < count; i++) {
     let x: number, y: number, z: number, len: number
@@ -235,7 +238,7 @@ const initParticles = () => {
   const geometry = new Geometry(gl, {
     position: { size: 3, data: positions },
     random: { size: 4, data: randoms },
-    color: { size: 3, data: colors }
+    color: { size: 3, data: colors },
   })
 
   program = new Program(gl, {
@@ -246,10 +249,10 @@ const initParticles = () => {
       uSpread: { value: props.particleSpread },
       uBaseSize: { value: props.particleBaseSize },
       uSizeRandomness: { value: props.sizeRandomness },
-      uAlphaParticles: { value: props.alphaParticles ? 1 : 0 }
+      uAlphaParticles: { value: props.alphaParticles ? 1 : 0 },
     },
     transparent: true,
-    depthTest: false
+    depthTest: false,
   })
 
   particles = new Mesh(gl, { mode: gl.POINTS, geometry, program })
@@ -352,7 +355,7 @@ watch(
     bindHoverListeners()
     disposeInit = initParticles() ?? null
   },
-  { deep: true }
+  { deep: true },
 )
 
 watch(
@@ -362,7 +365,7 @@ watch(
     if (!props.moveParticlesOnHover) {
       resetMouse()
     }
-  }
+  },
 )
 </script>
 

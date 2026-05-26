@@ -6,7 +6,8 @@ import { experienceData, complementaryExperienceData } from '@/data/experience'
 const splitBulletsIntoColumns = (bullets: string[], cols = 2): string[][] => {
   const result: string[][] = Array.from({ length: cols }, () => [])
   bullets.forEach((bullet, index) => {
-    result[index % cols].push(bullet)
+    const column = result[index % cols]
+    if (column) column.push(bullet)
   })
   return result
 }
