@@ -60,7 +60,7 @@ function handleSubmit(event: Event) {
                 href="mailto:paulooosf@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group inline-flex items-center gap-3 text-white transition-colors duration-300 hover:text-mauveMagic-600"
+                class="group inline-flex self-start items-center gap-3 text-white transition-colors duration-300 hover:text-mauveMagic-600"
               >
                 <span
                   class="group neon-below-lavender relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-lavenderPurple-500 text-white transition-all duration-300 ease-out hover:neon-below-mauve"
@@ -89,7 +89,7 @@ function handleSubmit(event: Event) {
                 href="https://www.linkedin.com/in/paulooosf/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group inline-flex items-center gap-3 text-white transition-colors duration-300 hover:text-mauveMagic-600"
+                class="group inline-flex self-start items-center gap-3 text-white transition-colors duration-300 hover:text-mauveMagic-600"
               >
                 <span
                   class="group neon-below-lavender relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-lavenderPurple-500 text-white transition-all duration-300 ease-out hover:neon-below-mauve"
@@ -118,7 +118,7 @@ function handleSubmit(event: Event) {
                 href="https://github.com/paulooosf"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group inline-flex items-center gap-3 text-white transition-colors duration-300 hover:text-mauveMagic-600"
+                class="group inline-flex self-start items-center gap-3 text-white transition-colors duration-300 hover:text-mauveMagic-600"
               >
                 <span
                   class="group neon-below-lavender relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-lavenderPurple-500 text-white transition-all duration-300 ease-out hover:neon-below-mauve"
