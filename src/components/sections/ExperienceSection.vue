@@ -121,7 +121,6 @@ const splitBulletsIntoColumns = (bullets: string[], cols = 2): string[][] => {
         </ScrollReveal>
       </div>
 
-      <!-- Complementary Experience -->
       <div class="flex w-full flex-col items-center gap-8">
         <h3 class="font-sora text-2xl font-semibold text-white sm:text-3xl">
           Experiência Complementar
@@ -131,7 +130,6 @@ const splitBulletsIntoColumns = (bullets: string[], cols = 2): string[][] => {
           <template v-for="item in complementaryExperienceData" :key="item.company">
             <SpotlightCard border-color="border-lavenderPurple-500/40">
               <div class="relative z-10">
-                <!-- Company -->
                 <p
                   class="font-sans text-base font-medium text-white drop-shadow-[0_0_10px_rgba(199,125,255,0.35)]"
                 >
@@ -141,7 +139,6 @@ const splitBulletsIntoColumns = (bullets: string[], cols = 2): string[][] => {
                   {{ item.companyDescription }}
                 </p>
 
-                <!-- Role -->
                 <div class="mt-3 space-y-0.5">
                   <h4
                     class="font-sora text-2xl font-bold leading-tight text-lavenderPurple-500 drop-shadow-[0_0_14px_rgba(199,125,255,0.45)]"
@@ -153,7 +150,6 @@ const splitBulletsIntoColumns = (bullets: string[], cols = 2): string[][] => {
                   </p>
                 </div>
 
-                <!-- Bullets in Two Columns -->
                 <div class="grid grid-cols-1 gap-x-8 pt-5 sm:grid-cols-2">
                   <template
                     v-for="(column, colIndex) in splitBulletsIntoColumns(item.bullets)"
@@ -178,7 +174,6 @@ const splitBulletsIntoColumns = (bullets: string[], cols = 2): string[][] => {
                   </template>
                 </div>
 
-                <!-- Chips -->
                 <div class="mt-5 flex flex-wrap gap-2">
                   <span
                     v-for="chip in item.chips"

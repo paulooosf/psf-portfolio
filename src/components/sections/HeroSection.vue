@@ -22,7 +22,6 @@ const profilePhoto = '/images/foto-perfil.jpeg'
           <div
             class="flex w-full flex-col items-center gap-8 lg:flex-row lg:items-center lg:justify-between"
           >
-            <!-- Foto no mobile (aparece antes do texto) -->
             <div class="flex shrink-0 overflow-visible lg:hidden">
               <div class="relative h-52 w-52 sm:h-64 sm:w-64">
                 <div
@@ -90,7 +89,6 @@ const profilePhoto = '/images/foto-perfil.jpeg'
               aria-hidden="true"
             />
 
-            <!-- Foto no desktop (lado direito) -->
             <div class="hidden shrink-0 overflow-visible lg:block">
               <div class="relative h-96 w-96">
                 <div

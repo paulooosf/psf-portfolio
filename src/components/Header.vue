@@ -30,7 +30,6 @@ const navItems = [
         <img :src="logoSrc" alt="Paulo Henrique" class="h-9 w-auto object-contain sm:h-10" />
       </a>
 
-      <!-- Desktop nav -->
       <ul class="hidden lg:flex min-w-0 flex-1 justify-center gap-1 lg:gap-6">
         <li v-for="item in navItems" :key="item.href" class="shrink-0">
           <a
@@ -48,7 +47,6 @@ const navItems = [
 
       <div class="hidden lg:block w-24 shrink-0 sm:w-28" aria-hidden="true" />
 
-      <!-- Hamburger button -->
       <button
         class="lg:hidden flex flex-col justify-center items-center gap-1.5 w-10 h-10 rounded-lg text-white"
         :aria-label="menuOpen ? 'Fechar menu' : 'Abrir menu'"
@@ -62,7 +60,6 @@ const navItems = [
 
   </header>
 
-  <!-- Mobile menu (fora do header para evitar bug de stacking) -->
   <Teleport to="body">
     <div
       class="lg:hidden fixed inset-0 top-16 z-40 bg-[#090909]/70 backdrop-blur-md backdrop-saturate-150 transition-all duration-300 ease-in-out"
