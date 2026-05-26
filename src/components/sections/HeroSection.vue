@@ -44,7 +44,7 @@ const profilePhoto = '/images/foto-perfil.jpeg'
               </p>
 
               <h1
-                class="font-sora text-5xl font-bold leading-tight whitespace-nowrap sm:text-6xl md:text-6xl lg:text-8xl"
+                class="font-sora text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-8xl lg:whitespace-nowrap"
               >
                 <span
                   class="neon-text-below-gradient bg-gradient-to-r from-mauveMagic-400 to-lavenderPurple-500 bg-clip-text text-transparent"
