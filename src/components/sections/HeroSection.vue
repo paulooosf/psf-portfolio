@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import { useLocale } from '@/composables/useLocale'
 import ParticlesBackground from '@/components/sections/ParticlesBackground.vue'
-import Button from '@/components/ui/Button.vue'
 import SocialLinks from '@/components/ui/SocialLinks.vue'
 import EncryptedText from '@/components/ui/EncryptedText.vue'
 import ScrollReveal from '@/components/ui/ScrollReveal.vue'
 
+const { t } = useLocale()
 const profilePhoto = '/images/foto-perfil.jpeg'
 </script>
 
@@ -40,7 +41,7 @@ const profilePhoto = '/images/foto-perfil.jpeg'
               <p
                 class="font-sans text-xl font-semibold leading-tight text-white/90 sm:text-2xl md:text-2xl lg:text-3xl"
               >
-                Bem-vindo(a)! Me chamo
+                {{ t('hero.welcome') }}
               </p>
 
               <h1
@@ -56,13 +57,11 @@ const profilePhoto = '/images/foto-perfil.jpeg'
               <p
                 class="font-sans text-xl font-semibold leading-tight text-white/90 sm:text-2xl md:text-2xl lg:text-3xl"
               >
-                Desenvolvedor Back-end especializado em Java e Spring Boot.
+                {{ t('hero.role') }}
               </p>
 
               <p class="font-sans text-sm leading-relaxed text-slate-300 sm:text-base lg:text-lg">
-                Construo APIs e aplicações com foco em performance, organização e escalabilidade.
-                Também possuo experiência com tecnologias front-end para desenvolvimento de soluções
-                completas quando necessário.
+                {{ t('hero.description') }}
               </p>
 
               <div class="flex flex-col items-center gap-6 pt-4 lg:items-start lg:flex-row lg:gap-8">
@@ -80,7 +79,7 @@ const profilePhoto = '/images/foto-perfil.jpeg'
                         d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
                       />
                     </svg>
-                    Baixar CV
+                    {{ t('hero.downloadCv') }}
                   </span>
                   <span class="absolute inset-0 overflow-hidden rounded-full" aria-hidden="true">
                     <span

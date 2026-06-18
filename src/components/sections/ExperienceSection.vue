@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import { useLocale } from '@/composables/useLocale'
 import SpotlightCard from '@/components/ui/SpotlightCard.vue'
 import ScrollReveal from '@/components/ui/ScrollReveal.vue'
 import { experienceData, complementaryExperienceData } from '@/data/experience'
+
+const { t, p, pl } = useLocale()
 
 const splitBulletsIntoColumns = (bullets: string[], cols = 2): string[][] => {
   const result: string[][] = Array.from({ length: cols }, () => [])
@@ -24,11 +27,11 @@ const splitBulletsIntoColumns = (bullets: string[], cols = 2): string[][] => {
             <span
               class="bg-gradient-to-r from-mauveMagic-400 to-lavenderPurple-500 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(199,125,255,0.28)]"
             >
-              Experiência Profissional
+              {{ t('experience.title') }}
             </span>
           </h2>
           <p class="font-sans text-base font-normal leading-relaxed text-slate-300 sm:text-lg">
-            Desenvolvendo soluções escaláveis e APIs modernas.
+            {{ t('experience.subtitle') }}
           </p>
         </div>
       </ScrollReveal>
@@ -74,16 +77,16 @@ const splitBulletsIntoColumns = (bullets: string[], cols = 2): string[][] => {
                       <h3
                         class="font-sora text-3xl font-bold leading-tight text-lavenderPurple-500 drop-shadow-[0_0_14px_rgba(199,125,255,0.45)]"
                       >
-                        {{ role.role }}
+                        {{ p(role.role) }}
                       </h3>
                       <p class="font-sans text-sm font-light text-slate-400">
-                        {{ role.period }}
+                        {{ p(role.period) }}
                       </p>
                     </div>
 
                     <div class="grid grid-cols-1 gap-x-8 pt-5 sm:grid-cols-2">
                       <template
-                        v-for="(column, colIndex) in splitBulletsIntoColumns(role.bullets)"
+                        v-for="(column, colIndex) in splitBulletsIntoColumns(pl(role.bullets))"
                         :key="`col-${colIndex}`"
                       >
                         <ul class="space-y-3">
@@ -107,7 +110,7 @@ const splitBulletsIntoColumns = (bullets: string[], cols = 2): string[][] => {
 
                     <div class="mt-5 flex flex-wrap gap-2">
                       <span
-                        v-for="chip in role.chips"
+                        v-for="chip in pl(role.chips)"
                         :key="chip"
                         class="cursor-default rounded-full border border-[#e0aaff]/40 bg-[#e0aaff]/10 px-3 py-1 font-sans text-xs font-semibold text-[#e0aaff] transition-all duration-300 ease-out hover:border-[#e0aaff]/70 hover:bg-[#e0aaff]/20 hover:shadow-[0_0_10px_rgba(224,170,255,0.3)]"
                       >
@@ -124,7 +127,7 @@ const splitBulletsIntoColumns = (bullets: string[], cols = 2): string[][] => {
 
       <div class="flex w-full flex-col items-center gap-8">
         <h3 class="font-sora text-2xl font-semibold text-white sm:text-3xl">
-          Experiência Complementar
+          {{ t('experience.complementary') }}
         </h3>
 
         <div class="w-full max-w-4xl">
@@ -137,23 +140,23 @@ const splitBulletsIntoColumns = (bullets: string[], cols = 2): string[][] => {
                   {{ item.company }}
                 </p>
                 <p class="mt-1 font-sans text-sm font-normal leading-relaxed text-slate-400">
-                  {{ item.companyDescription }}
+                  {{ p(item.companyDescription) }}
                 </p>
 
                 <div class="mt-3 space-y-0.5">
                   <h4
                     class="font-sora text-2xl font-bold leading-tight text-lavenderPurple-500 drop-shadow-[0_0_14px_rgba(199,125,255,0.45)]"
                   >
-                    {{ item.role }}
+                    {{ p(item.role) }}
                   </h4>
                   <p class="font-sans text-sm font-light text-slate-400">
-                    {{ item.period }}
+                    {{ p(item.period) }}
                   </p>
                 </div>
 
                 <div class="grid grid-cols-1 gap-x-8 pt-5 sm:grid-cols-2">
                   <template
-                    v-for="(column, colIndex) in splitBulletsIntoColumns(item.bullets)"
+                    v-for="(column, colIndex) in splitBulletsIntoColumns(pl(item.bullets))"
                     :key="`comp-col-${colIndex}`"
                   >
                     <ul class="space-y-3">
@@ -177,7 +180,7 @@ const splitBulletsIntoColumns = (bullets: string[], cols = 2): string[][] => {
 
                 <div class="mt-5 flex flex-wrap gap-2">
                   <span
-                    v-for="chip in item.chips"
+                    v-for="chip in pl(item.chips)"
                     :key="chip"
                     class="cursor-default rounded-full border border-[#e0aaff]/40 bg-[#e0aaff]/10 px-3 py-1 font-sans text-xs font-semibold text-[#e0aaff] transition-all duration-300 ease-out hover:border-[#e0aaff]/70 hover:bg-[#e0aaff]/20 hover:shadow-[0_0_10px_rgba(224,170,255,0.3)]"
                   >

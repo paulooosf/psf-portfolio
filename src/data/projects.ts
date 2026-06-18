@@ -1,3 +1,5 @@
+import type { Localized } from '@/i18n/helpers'
+
 export interface GithubLink {
   label: string
   url: string
@@ -5,8 +7,8 @@ export interface GithubLink {
 
 export interface Project {
   title: string
-  category: string
-  description: string
+  category: Localized
+  description: Localized
   chips: string[]
   image: string
   githubLinks: GithubLink[]
@@ -16,27 +18,22 @@ export interface Project {
 export const projectsData: Project[] = [
   {
     title: 'Cometa Marketplace',
-    category: 'Microsserviços',
-    description:
-      'Sistema de e-commerce distribuído utilizando arquitetura de microserviços, comunicação assíncrona com RabbitMQ, service discovery e orquestração via Docker Compose.',
-    chips: [
-      'Spring Boot',
-      'Spring Cloud',
-      'RabbitMQ',
-      'Docker',
-      'PostgreSQL',
-      'MongoDB',
-      'Redis',
-      'JasperReports',
-    ],
+    category: { pt: 'Microsserviços', en: 'Microservices' },
+    description: {
+      pt: 'Sistema de e-commerce distribuído utilizando arquitetura de microserviços, comunicação assíncrona com RabbitMQ, service discovery e orquestração via Docker Compose.',
+      en: 'Distributed e-commerce system using microservices architecture, asynchronous communication with RabbitMQ, service discovery, and orchestration via Docker Compose.',
+    },
+    chips: ['Spring Boot', 'Spring Cloud', 'RabbitMQ', 'Docker', 'PostgreSQL', 'MongoDB', 'Redis', 'JasperReports'],
     image: '/images/projetos/cometa-marketplace.png',
     githubLinks: [{ label: 'GitHub', url: 'https://github.com/paulooosf/cometa-marketplace' }],
   },
   {
     title: 'GameboXed',
-    category: 'FullStack',
-    description:
-      'Plataforma full stack de avaliação de jogos com autenticação JWT/OAuth2, sistema de reviews, cache com Redis e integração entre API Spring Boot e interface React.',
+    category: { pt: 'FullStack', en: 'FullStack' },
+    description: {
+      pt: 'Plataforma full stack de avaliação de jogos com autenticação JWT/OAuth2, sistema de reviews, cache com Redis e integração entre API Spring Boot e interface React.',
+      en: 'Full stack game review platform with JWT/OAuth2 authentication, review system, Redis caching, and integration between Spring Boot API and React interface.',
+    },
     chips: ['Spring Boot', 'React', 'JWT', 'OAuth2', 'Redis', 'PostgreSQL', 'Docker'],
     image: '/images/projetos/gameboxed.png',
     githubLinks: [
@@ -46,9 +43,11 @@ export const projectsData: Project[] = [
   },
   {
     title: 'PSF Fitness',
-    category: 'Front-end PWA',
-    description:
-      'PWA para gerenciamento de treinos de musculação com funcionamento offline, persistência local e experiência otimizada para dispositivos móveis.',
+    category: { pt: 'Front-end PWA', en: 'Front-end PWA' },
+    description: {
+      pt: 'PWA para gerenciamento de treinos de musculação com funcionamento offline, persistência local e experiência otimizada para dispositivos móveis.',
+      en: 'PWA for workout management with offline support, local persistence, and an experience optimized for mobile devices.',
+    },
     chips: ['Vue', 'TypeScript', 'Vuetify', 'Tailwind', 'PWA'],
     image: '/images/projetos/psf-fitness.png',
     githubLinks: [{ label: 'GitHub', url: 'https://github.com/paulooosf/psf-fitness' }],
@@ -56,9 +55,11 @@ export const projectsData: Project[] = [
   },
   {
     title: 'PSF Stock',
-    category: 'FullStack',
-    description:
-      'Sistema full stack de gerenciamento de estoque com autenticação JWT, movimentação de produtos, dashboard administrativo e integração entre API .NET e front-end Angular.',
+    category: { pt: 'FullStack', en: 'FullStack' },
+    description: {
+      pt: 'Sistema full stack de gerenciamento de estoque com autenticação JWT, movimentação de produtos, dashboard administrativo e integração entre API .NET e front-end Angular.',
+      en: 'Full stack inventory management system with JWT authentication, product movement, admin dashboard, and integration between .NET API and Angular front-end.',
+    },
     chips: ['.NET', 'Angular', 'PostgreSQL', 'JWT', 'Entity Framework', 'Tailwind'],
     image: '/images/projetos/psf-stock.png',
     githubLinks: [

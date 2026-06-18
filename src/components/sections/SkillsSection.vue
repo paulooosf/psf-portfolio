@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import { useLocale } from '@/composables/useLocale'
 import SkillCard from '@/components/ui/SkillCard.vue'
 import ScrollReveal from '@/components/ui/ScrollReveal.vue'
 import { skillCategories, studyingItems } from '@/data/skills'
+
+const { t, p, pl } = useLocale()
 </script>
 
 <template>
@@ -15,11 +18,11 @@ import { skillCategories, studyingItems } from '@/data/skills'
             <span
               class="bg-gradient-to-r from-mauveMagic-400 to-lavenderPurple-500 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(199,125,255,0.28)]"
             >
-              Habilidades Técnicas
+              {{ t('skills.title') }}
             </span>
           </h2>
           <p class="font-sans text-base font-normal leading-relaxed text-slate-300 sm:text-lg">
-            Tecnologias utilizadas em projetos reais.
+            {{ t('skills.subtitle') }}
           </p>
         </div>
       </ScrollReveal>
@@ -27,13 +30,13 @@ import { skillCategories, studyingItems } from '@/data/skills'
       <div class="flex w-full flex-col items-center gap-10">
         <div
           v-for="category in skillCategories"
-          :key="category.name"
+          :key="p(category.name)"
           class="flex w-full flex-col items-center gap-3"
         >
           <h3
             :class="['font-sora text-sm font-semibold uppercase tracking-widest', category.color]"
           >
-            {{ category.name }}
+            {{ p(category.name) }}
           </h3>
 
           <div class="flex flex-wrap justify-center gap-4">
@@ -54,17 +57,19 @@ import { skillCategories, studyingItems } from '@/data/skills'
       </div>
 
       <div class="flex w-full flex-col items-center gap-6">
-        <h3 class="font-sora text-2xl font-semibold text-white sm:text-3xl">Estudando agora</h3>
+        <h3 class="font-sora text-2xl font-semibold text-white sm:text-3xl">
+          {{ t('skills.studying') }}
+        </h3>
 
         <div class="flex flex-wrap justify-center gap-4">
           <SkillCard
-            v-for="item in studyingItems"
-            :key="item.name"
+            v-for="item in pl(studyingItems)"
+            :key="item"
             glow-color="rgba(199, 125, 255, 0.45)"
             border-color="rgba(157, 78, 221, 0.4)"
           >
             <span class="font-sans text-sm font-semibold text-[#e0aaff]">
-              {{ item.name }}
+              {{ item }}
             </span>
           </SkillCard>
         </div>

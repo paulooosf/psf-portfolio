@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useLocale } from '@/composables/useLocale'
 import ScrollReveal from '@/components/ui/ScrollReveal.vue'
+
+const { t } = useLocale()
 
 const name = ref('')
 const email = ref('')
@@ -14,13 +17,13 @@ function handleSubmit(event: Event) {
   emailError.value = ''
 
   if (!emailPattern.test(email.value)) {
-    emailError.value = 'Digite um e-mail válido.'
+    emailError.value = t('contact.emailError')
     return
   }
 
-  const subject = encodeURIComponent('Contato via portfólio')
+  const subject = encodeURIComponent(t('contact.mailSubject'))
   const body = encodeURIComponent(
-    `Nome: ${name.value}\nEmail: ${email.value}\nMensagem:\n${message.value}`,
+    `${t('contact.mailBodyName')}: ${name.value}\n${t('contact.mailBodyEmail')}: ${email.value}\n${t('contact.mailBodyMessage')}:\n${message.value}`,
   )
 
   globalThis.location.href = `mailto:paulooosf@gmail.com?subject=${subject}&body=${body}`
@@ -36,21 +39,20 @@ function handleSubmit(event: Event) {
             <span
               class="bg-gradient-to-r from-mauveMagic-400 to-lavenderPurple-500 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(199,125,255,0.28)]"
             >
-              Contato
+              {{ t('contact.title') }}
             </span>
           </h2>
           <p class="font-sans text-base font-normal leading-relaxed text-slate-300 sm:text-lg">
-            Disponível para colaborações e projetos.
+            {{ t('contact.subtitle') }}
           </p>
         </div>
 
         <div class="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-x-12">
           <div class="flex flex-col gap-6 sm:px-4">
             <div class="space-y-4">
-              <h3 class="font-sora text-3xl font-bold text-white sm:text-4xl">Vamos conversar?</h3>
+              <h3 class="font-sora text-3xl font-bold text-white sm:text-4xl">{{ t('contact.heading') }}</h3>
               <p class="max-w-xl font-sans text-base leading-relaxed text-slate-300 sm:text-lg">
-                Aberto para projetos freelance e conexões na área de tecnologia. Caso tenha um
-                projeto em mente ou queira trocar uma ideia, entre em contato!
+                {{ t('contact.description') }}
               </p>
             </div>
 
@@ -156,7 +158,7 @@ function handleSubmit(event: Event) {
               <div class="grid gap-3">
                 <div>
                   <label class="font-sans text-sm font-semibold text-slate-200" for="name">
-                    Nome
+                    {{ t('contact.name') }}
                   </label>
                   <input
                     id="name"
@@ -169,7 +171,7 @@ function handleSubmit(event: Event) {
 
                 <div>
                   <label class="font-sans text-sm font-semibold text-slate-200" for="email">
-                    Email
+                    {{ t('contact.email') }}
                   </label>
                   <input
                     id="email"
@@ -183,7 +185,7 @@ function handleSubmit(event: Event) {
 
                 <div>
                   <label class="font-sans text-sm font-semibold text-slate-200" for="message">
-                    Mensagem
+                    {{ t('contact.message') }}
                   </label>
                   <textarea
                     id="message"
@@ -199,7 +201,7 @@ function handleSubmit(event: Event) {
                     class="group neon-below-lavender relative inline-flex h-12 w-full items-center justify-center rounded-lg bg-lavenderPurple-500 px-5 font-semibold text-white transition-all duration-300 ease-out hover:neon-below-mauve"
                   >
                     <span class="relative z-10 inline-flex items-center gap-2 text-sm">
-                      Enviar mensagem
+                      {{ t('contact.submit') }}
                       <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
                           stroke-linecap="round"

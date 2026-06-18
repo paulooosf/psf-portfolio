@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import { useLocale } from '@/composables/useLocale'
 import ProjectCard from '@/components/ui/ProjectCard.vue'
 import ScrollReveal from '@/components/ui/ScrollReveal.vue'
 import { projectsData } from '@/data/projects'
+
+const { t, p } = useLocale()
 </script>
 
 <template>
@@ -15,11 +18,11 @@ import { projectsData } from '@/data/projects'
             <span
               class="bg-gradient-to-r from-mauveMagic-400 to-lavenderPurple-500 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(199,125,255,0.28)]"
             >
-              Projetos
+              {{ t('projects.title') }}
             </span>
           </h2>
           <p class="font-sans text-base font-normal leading-relaxed text-slate-300 sm:text-lg">
-            Projetos que transformam estudo em arquitetura real.
+            {{ t('projects.subtitle') }}
           </p>
         </div>
       </ScrollReveal>
@@ -34,12 +37,13 @@ import { projectsData } from '@/data/projects'
           <div class="h-full flex flex-col">
             <ProjectCard
               :title="project.title"
-              :category="project.category"
-              :description="project.description"
+              :category="p(project.category)"
+              :description="p(project.description)"
               :chips="project.chips"
               :image="project.image"
               :github-links="project.githubLinks"
               :live-url="project.liveUrl"
+              :view-label="t('projects.view')"
             />
           </div>
         </ScrollReveal>
