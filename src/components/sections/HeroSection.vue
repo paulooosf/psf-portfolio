@@ -10,7 +10,10 @@ const profilePhoto = '/images/foto-perfil.jpeg'
 </script>
 
 <template>
-  <section id="hero" class="relative min-h-screen w-full overflow-x-hidden bg-[#090909] flex items-center">
+  <section
+    id="hero"
+    class="relative min-h-screen w-full overflow-x-hidden bg-[#090909] flex items-center"
+  >
     <div class="absolute inset-0 z-0 bg-[#090909]">
       <ParticlesBackground />
     </div>
@@ -64,10 +67,12 @@ const profilePhoto = '/images/foto-perfil.jpeg'
                 {{ t('hero.description') }}
               </p>
 
-              <div class="flex flex-col items-center gap-6 pt-4 lg:items-start lg:flex-row lg:gap-8">
-                <a 
-                  href="/cv.pdf" 
-                  download="Paulo_Henrique_CV.pdf"
+              <div
+                class="flex flex-col items-center gap-6 pt-4 lg:items-start lg:flex-row lg:gap-8"
+              >
+                <a
+                  href="/Paulo Henrique Curriculo 2026.pdf"
+                  download="Paulo_Henrique_Curriculo_2026.pdf"
                   class="group neon-below-lavender relative inline-flex h-10 items-center justify-center rounded-full bg-lavenderPurple-500 px-6 font-semibold text-white transition-all duration-300 ease-out hover:neon-below-mauve w-64 lg:w-auto"
                 >
                   <span class="relative z-10 inline-flex items-center justify-center">
